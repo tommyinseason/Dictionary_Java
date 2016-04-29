@@ -19,16 +19,16 @@ public class App {
 
     post("/words", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-    //
-    //   ArrayList<Word> userInputWords = request.session().attribute("userInputWords");
-    //     if (userInputWords == null) {
-    //       userInputWords = new ArrayList<Word>();
-    //       request.session().attribute("userInputWords", userInputWords);
-    // }
 
-      String userInputWord = request.queryParams("userInputWord");
-      Word newWord = new Word(userInputWord);
-      request.session().attribute("wordList", newWord);
+      ArrayList<Word> words = request.session().attribute("words");
+        if (words == null) {
+          words = new ArrayList<Word>();
+          request.session().attribute("words", words);
+    }
+
+      String userInput = request.queryParams("userInputWord");
+      Word newWord = new Word(userInput);
+      words.add(newWord);
 
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);

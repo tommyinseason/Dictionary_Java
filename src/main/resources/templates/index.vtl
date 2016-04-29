@@ -1,7 +1,10 @@
 <h1>Word list!</h1>
 #if ($wordList)
-  <p>Current word:</p>
-  <p>$wordList.getWord()</p>
+  <ul>
+    #foreach ($word in $wordlist)
+      <li>$wordList.getWord()</li>
+    #end
+  </ul>
 #else
   <p>No words!</p>
 #end

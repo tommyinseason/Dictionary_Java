@@ -39,16 +39,16 @@ public class AppTest extends FluentTest {
     click("a", withText("Go Back"));
     assertThat(pageSource()).contains("apple");
   }
-  // @Test
-  // public void multipleTasksAreDisplayedTest() {
-  //   goTo("http://localhost:4567/");
-  //   fill("#userInputWord").with("apple");
-  //   submit(".btn");
-  //   click("a", withText("Go Back"));
-  //   fill("#userInputWord").with("bananas");
-  //   submit(".btn");
-  //   click("a", withText("Go Back"));
-  //   assertThat(pageSource()).contains("apple");
-  //   assertThat(pageSource()).contains("bananas");
-  // }
+  @Test
+  public void multipleTasksAreDisplayedTest() {
+    goTo("http://localhost:4567/");
+    fill("#userInputWord").with("apple");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    fill("#userInputWord").with("bananas");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("apple");
+    assertThat(pageSource()).contains("bananas");
+  }
 }

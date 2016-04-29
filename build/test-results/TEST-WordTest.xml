@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-04-29T23:16:11" hostname="Tom-Joness-MacBook-Pro.local" time="0.0">
+<testsuite name="WordTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-04-29T23:47:36" hostname="Tom-Joness-MacBook-Pro.local" time="0.001">
   <properties/>
   <testcase name="newWord_instantiatesCorrectly" classname="WordTest" time="0.0"/>
   <testcase name="Word_instantiatesWithWord" classname="WordTest" time="0.0"/>
