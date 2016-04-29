@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.fluentlenium.core.filter.FilterConstructor.*;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
@@ -22,11 +23,20 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("Dictionary");
   }
+
   @Test
- public void WordIsCreatedTest() {
-   goTo("http://localhost:4567/");
-   fill("#word").with("apple");
-   submit(".btn");
-   assertThat(pageSource()).contains("Your word has been saved.");
- }
+  public void WordIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    fill("#userInputWord").with("apple");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your word has been saved.");
+  }
+  @Test
+  public void taskIsDisplayedTest() {
+    goTo("http://localhost:4567/");
+    fill("#userInputWord").with("apple");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("word");
+  }
 }
