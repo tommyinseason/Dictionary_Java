@@ -36,19 +36,19 @@ public class WordTest {
     assertEquals(Word.all().size(), 0);
   }
 
-  // @Test
-  // public void getId_categoriesInstantiateWithAnId_1() {
-  //   Word testWord = new Word("Home");
-  //   assertEquals(1, testWord.getId());
-  // }
-  //
-  // @Test
-  // public void find_returnsWordWithSameId_secondWord() {
-  //   Word firstWord = new Word("Home");
-  //   Word secondWord = new Word("Work");
-  //   assertEquals(Word.find(secondWord.getId()), secondWord);
-  // }
-  //
+  @Test
+  public void getId_WordInstantiateWithAnId_1() {
+    Word testWord = new Word("Home");
+    assertEquals(1, testWord.getId());
+  }
+  
+  @Test
+  public void find_returnsWordWithSameId_secondWord() {
+    Word firstWord = new Word("Home");
+    Word secondWord = new Word("Work");
+    assertEquals(Word.find(secondWord.getId()), secondWord);
+  }
+
   // @Test
   // public void find_returnsNullWhenNoWordFound_null() {
   //   assertTrue(Word.find(999) == null);
