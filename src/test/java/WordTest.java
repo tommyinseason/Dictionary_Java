@@ -16,18 +16,18 @@ public class WordTest {
   }
 
   @Test
-  public void getTheWord_WordInstantiatesWithName_Apple() {
+  public void getTheWord_InstantiatesWithWord_Apple() {
     Word testWord = new Word("Apple");
     assertEquals("Apple", testWord.getTheWord());
   }
 
-  // @Test
-  // public void all_returnsAllInstancesOfWord_true() {
-  //   Word firstWord = new Word("Home");
-  //   Word secondWord = new Word("Work");
-  //   assertTrue(Word.all().contains(firstWord));
-  //   assertTrue(Word.all().contains(secondWord));
-  // }
+  @Test
+  public void all_returnsAllInstancesOfWord_true() {
+    Word firstWord = new Word("apple");
+    Word secondWord = new Word("banana");
+    assertTrue(Word.all().contains(firstWord));
+    assertTrue(Word.all().contains(secondWord));
+  }
   //
   // @Test
   // public void clear_emptiesAllCategoriesFromList_0() {
