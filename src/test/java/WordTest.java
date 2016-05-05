@@ -41,7 +41,7 @@ public class WordTest {
     Word testWord = new Word("Home");
     assertEquals(1, testWord.getId());
   }
-  
+
   @Test
   public void find_returnsWordWithSameId_secondWord() {
     Word firstWord = new Word("Home");
@@ -49,8 +49,23 @@ public class WordTest {
     assertEquals(Word.find(secondWord.getId()), secondWord);
   }
 
-  // @Test
-  // public void find_returnsNullWhenNoWordFound_null() {
-  //   assertTrue(Word.find(999) == null);
-  // }
+  @Test
+  public void find_returnsNullWhenNoWordFound_null() {
+    assertTrue(Word.find(999) == null);
+  }
+
+  @Test
+  public void getDefinitions_initiallyReturnsEmptyList_ArrayList() {
+    Word testWord = new Word("Home");
+    assertEquals(0, testWord.getDefinitions().size());
+  }
+
+  @Test
+  public void addDefinition_addsDefinitionToList_true() {
+    Word testWord = new Word("apple");
+    Definition testDefinition = new Definition("fruit from a tree");
+    testWord.addDefinition(testDefinition);
+    assertTrue(testWord.getDefinitions().contains(testDefinition));
+  }
+
 }

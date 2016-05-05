@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-05-05T22:43:58" hostname="Tom-Joness-MacBook-Pro.local" time="0.018">
+<testsuite name="WordTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-05-05T23:30:47" hostname="Tom-Joness-MBP" time="0.034">
   <properties/>
-  <testcase name="clear_emptiesAllWordsFromList_0" classname="WordTest" time="0.006"/>
-  <testcase name="find_returnsWordWithSameId_secondWord" classname="WordTest" time="0.005"/>
-  <testcase name="getId_WordInstantiateWithAnId_1" classname="WordTest" time="0.0"/>
-  <testcase name="getTheWord_InstantiatesWithWord_Apple" classname="WordTest" time="0.001"/>
-  <testcase name="all_returnsAllInstancesOfWord_true" classname="WordTest" time="0.0"/>
-  <testcase name="word_instantiatesCorrectly_true" classname="WordTest" time="0.001"/>
+  <testcase name="clear_emptiesAllWordsFromList_0" classname="WordTest" time="0.004"/>
+  <testcase name="find_returnsWordWithSameId_secondWord" classname="WordTest" time="0.001"/>
+  <testcase name="getDefinitions_initiallyReturnsEmptyList_ArrayList" classname="WordTest" time="0.001"/>
+  <testcase name="getId_WordInstantiateWithAnId_1" classname="WordTest" time="0.002"/>
+  <testcase name="addDefinition_addsDefinitionToList_true" classname="WordTest" time="0.002"/>
+  <testcase name="getTheWord_InstantiatesWithWord_Apple" classname="WordTest" time="0.002"/>
+  <testcase name="find_returnsNullWhenNoWordFound_null" classname="WordTest" time="0.001"/>
+  <testcase name="all_returnsAllInstancesOfWord_true" classname="WordTest" time="0.001"/>
+  <testcase name="word_instantiatesCorrectly_true" classname="WordTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
