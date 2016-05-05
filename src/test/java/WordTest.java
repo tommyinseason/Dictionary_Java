@@ -28,14 +28,14 @@ public class WordTest {
     assertTrue(Word.all().contains(firstWord));
     assertTrue(Word.all().contains(secondWord));
   }
-  //
-  // @Test
-  // public void clear_emptiesAllCategoriesFromList_0() {
-  //   Word testWord = new Word("Home");
-  //   Word.clear();
-  //   assertEquals(Word.all().size(), 0);
-  // }
-  //
+
+  @Test
+  public void clear_emptiesAllWordsFromList_0() {
+    Word testWord = new Word("apple");
+    Word.clear();
+    assertEquals(Word.all().size(), 0);
+  }
+
   // @Test
   // public void getId_categoriesInstantiateWithAnId_1() {
   //   Word testWord = new Word("Home");
