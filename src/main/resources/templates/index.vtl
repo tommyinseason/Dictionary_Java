@@ -1,21 +1,4 @@
-<h1>Word list!</h1>
-#if ($wordList)
-  <ul>
-    #foreach ($word in $wordlist)
-      <li>$wordList.getWord()</li>
-    #end
-  </ul>
-#else
-  <p>No words!</p>
-#end
+<h1>Dictionary!</h1>
 
-
-
-<p>Add a new Word:</p>
-
-<form action="/words" method="post">
-  <label for="userInputWord">Enter Word To Define</label>
-  <input id="userInputWord" name="userInputWord" type="text">
-
-  <button type="submit" class="btn btn-default">Add Word</button>
-</form>
+<a href="/categories">View Word List</a>
+<a href="/categories/new">Add a New Word</a>
