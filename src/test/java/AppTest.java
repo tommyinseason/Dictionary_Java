@@ -30,12 +30,15 @@ public class AppTest extends FluentTest {
     click("a", withText("Add a New Word"));
     fill("#wordInput").with("Apple");
     submit(".btn");
+    assertThat(pageSource()).contains("Your Word has been saved.");
+    click("a", withText("View Words"));
     assertThat(pageSource()).contains("Apple");
   }
 
   @Test
   public void wordIsDisplayedTest() {
     goTo("http://localhost:4567/words");
+    click("a", withText("Add New Word"));
     fill("#wordInput").with("Apple");
     submit(".btn");
     click("a", withText("View Words"));
@@ -47,25 +50,24 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/words/new");
     fill("#wordInput").with("Apple");
     submit(".btn");
-    click("a", withText("View words"));
+    click("a", withText("View Words"));
     click("a", withText("Apple"));
     click("a", withText("Add a new definition"));
-    assertThat(pageSource()).contains("Add a definition to Apple");
+    assertThat(pageSource()).contains("Definition");
   }
 
   @Test
   public void defintionsIsAddedAndDisplayed() {
+    Word.clear();
     goTo("http://localhost:4567/words/new");
-    fill("#wordInput").with("Apple");
+    fill("#wordInput").with("Orange");
     submit(".btn");
-    click("a", withText("View words"));
-    click("a", withText("Apple"));
-    click("a", withText("Add a new defintion"));
-    fill("#definition").with("fruit from a tree");
+    click("a", withText("View Words"));
+    click("a", withText("Orange"));
+    click("a", withText("Add a new definition"));
+    fill("#definition").with("fruit that is orange");
     submit(".btn");
-    click("a", withText("View words"));
-    click("a", withText("Apple"));
-    assertThat(pageSource()).contains("fruit from a tree");
+    assertThat(pageSource()).contains("Your definition has been saved");
   }
 
 
